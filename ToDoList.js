@@ -67,25 +67,37 @@ function renderTasks() {
         deleteButton.dataset.id = currentTask.id;
 
         label.addEventListener("dblclick", () => {
-            
+
             editLabel.classList.add("edit-label");
             editLabel.value = currentTask.taskName;
             label.replaceWith(editLabel);
             editLabel.focus();
-            
             editLabel.addEventListener("keydown", (event) => {
                 if (event.key !== "Enter") {
                     return;
                 }
 
                 else if (editLabel.value === "" || editLabel.value.trim() === "") {
-                    return
+                    return;
                 }
 
                 else {
+
+                    let index = 0;
+
+                    while (index < tasks.length) {
+
+                        if (tasks[index].taskName.trim().toLowerCase() === editLabel.value.trim().toLowerCase() && tasks[index].id !== currentTask.id) {
+                            alert("This task already exists")
+                            return;
+                        }
+                        index++
+                    }
+
                     currentTask.taskName = editLabel.value;
                     saveTasks();
                     renderTasks();
+
                 }
             })
         })
@@ -145,8 +157,21 @@ function loadTasks() {
 }
 
 function addTask() {
+
+    let index = 0;
+
     if (taskInput.value === "" || taskInput.value.trim() === "") {
         return;
+    }
+
+    while (index < tasks.length) {
+
+        if (tasks[index].taskName.trim().toLowerCase() === taskInput.value.trim().toLowerCase()) {
+            alert("This task already exists")
+            return;
+        }
+
+        index++
     }
 
     let task = {
