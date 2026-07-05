@@ -1,0 +1,106 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+p {
+    font-size: 25px;
+    color: lightgray;
+}
+
+.input-ctn {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-family: monospace;
+}
+
+.task-name {
+    width: 200px;
+    height: 25px;
+    margin-top: 5px;
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.del-btn {
+    display: flex;
+    background-color: #121212;
+    color: white;
+    border: 1px solid #121212;
+    border-radius: 9px;
+    margin-left: 60px;
+    margin-right: auto;
+    margin-top: 2px;
+    font-size: 19px;
+    font-family: monospace;
+    transition: all 0.3s ease;
+}
+
+.del-btn:hover,
+.add-task-btn:hover {
+    transform: scale(1.15);
+}
+
+.add-task-btn {
+    background-color: #121212;
+    color: white;
+    border: 1px solid #121212;
+    margin-left: 5px;
+    margin-top: 20px;
+    font-family: monospace;
+    font-size: 22px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.del-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 3px;
+    margin-top: -5px;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.input-ctn {
+    display: flex;
+    height: 3vh;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.task-status {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #121212;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label {
+    display: inline-block;
+    padding: 10px;
+}
+
+.task-status:hover {
+    transform: scale(1.2);
+}
+
+.edit-label{
+    background-color: #121212;
+    color: white;
+    border: 1px solid #121212;
+    height: 28px;
+    font-size: 22px;
+    font-family: monospace;
+}
